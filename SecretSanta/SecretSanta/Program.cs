@@ -64,7 +64,7 @@ namespace SecretSanta
                 receiver.setSanta(santa);
                 santa.setReceiver(receiver);
 
-                Console.WriteLine(santa.getName() + " -> " + receiver.getName());
+                Console.WriteLine(santa.getName() +"(ID:"+santa.SantaID+")" + " -> " + receiver.getName() + "(ID:"+receiver.SantaID+")");
 
                 noSanta.Remove(receiver);
                 noReceiver.Remove(santa);
