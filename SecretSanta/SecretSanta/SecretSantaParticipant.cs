@@ -6,6 +6,18 @@
         private SecretSantaParticipant receiver, santa;
         private bool hasSanta = false;
         private bool hasReceiver = false;
+        private int santaID;
+        public int SantaID
+        {
+            get
+            {
+                return santaID;
+            }
+            set
+            {
+                santaID = value;
+            }
+        }
         public bool HasSanta
         {
             get
@@ -29,9 +41,10 @@
                 hasReceiver = value;
             }
         }
-        public SecretSantaParticipant(string n)
+        public SecretSantaParticipant(string n, int id)
         {
             name = n;
+            santaID = id;
         }
 
         public string getName()

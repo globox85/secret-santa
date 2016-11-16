@@ -12,7 +12,7 @@ namespace SecretSanta
         {
             List<SecretSantaParticipant> participants = new List<SecretSantaParticipant>();
             Console.WriteLine("To run a Secret Santa, please enter the names of your participants below. One name per line.");
-
+            int next_id = 0;
             while(true){
                 string next = Console.ReadLine();
 
@@ -23,8 +23,9 @@ namespace SecretSanta
 
                 else
                 {
-                    SecretSantaParticipant p = new SecretSantaParticipant(next);
+                    SecretSantaParticipant p = new SecretSantaParticipant(next, next_id);
                     participants.Add(p);
+                    next_id++;
                 }
             }
 
@@ -53,7 +54,7 @@ namespace SecretSanta
                     santa = noReceiver[santaIndex];
                     receiver = noSanta[receiverIndex];
 
-                    if(santa.getName() != receiver.getName())
+                    if(santa.SantaID != receiver.SantaID)
                     {
                         unique = true;
                     }
